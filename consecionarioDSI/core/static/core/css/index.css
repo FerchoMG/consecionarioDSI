@@ -1,0 +1,574 @@
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+  background-color: #202020;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Estilos de la sección de inicio */
+#inicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  height: 100vh;
+  color: #fff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.7)), url(../images/background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#inicio .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#inicio h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#inicio p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+#inicio .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#inicio .btn:hover {
+  color: wheat;
+  background-color: #e62300;
+}
+
+/* Estilos de la sección de vehículos */
+#vehiculos {
+  padding: 0 0;
+}
+
+#vehiculos h2 {
+  text-align: center;
+  font-size: 30px;
+
+}
+
+/* Estilos de la sección de servicios */
+#servicios {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+#servicios h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+/* Estilos de la sección de contacto */
+#contacto {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.87)), url(../images/background2.jpg);
+  background-size: cover;
+  background-position: bottom;
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+}
+
+#contacto h2 {
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+/* Estilos del pie de página */
+footer {
+  background-color: #1f1e1e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilos adicionales */
+.btn {
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: normal;
+  justify-content: space-between;
+  padding: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+  align-items: center;
+}
+
+
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ff0000;
+  bottom: -5px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+nav ul li a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.logo h1 {
+  color: rgb(255, 0, 0);
+  font-weight: 900;
+}
+
+header {
+  z-index: 1000;
+  width: 100vw;
+  position: fixed;
+}
+
+#vehiculos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.856));
+  background-size: cover;
+  background-position: bottom;
+  padding: 0;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-style: normaL;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  z-index: -1;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slide-info {
+  margin-top: 10px;
+}
+
+.slide-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.slide-info p {
+  font-size: 14px;
+}
+
+#vehiculos .container {
+  max-width: 100%;
+  padding: 50px 20px;
+  margin: 0px;
+
+}
+
+.ver-vehiculo-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 10px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.ver-vehiculo-btn:hover {
+  background-color: rgba(29, 29, 29, 0.795);
+  color: white;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.ver-vehiculo-btn::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #ff1900;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.ver-vehiculo-btn::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 50%;
+  background-color: #ff1900;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.ver-vehiculo-btn:hover::before,
+.ver-vehiculo-btn:hover::after {
+  transform: scaleX(1);
+}
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: grid;
+  grid-gap: 10px;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #9e7171;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.whatsapp-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #25d366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.1);
+  background-color: rgb(255, 0, 0);
+}
+
+.submit-btn.valid {
+  background-color: red;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  position: relative;
+}
+
+.whatsapp-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.whatsapp-btn:hover::after {
+  width: 100%;
+
+}
+
+.slide {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.slide img {
+  width: 65%;
+}
+
+.slide-info h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 60px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.slide-info {
+  text-align: right;
+}
+
+.slide-info p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+}
+
+.container h2 {
+  color: rgb(255, 255, 255);
+}
+
+.img-cont .imagen-vehiculo {
+  height: 100%;
+  width: 100%;
+  border: 10px transparent;
+  border-radius: 10px;
+  box-sizing: content-box;
+
+}
+
+.img-cont {
+  margin: 40px;
+  max-width: 45%;
+}
+
+.container-beneficios h1 {
+  font-size: 70px;
+}
+
+.container-beneficios {
+  margin: 50px;
+  text-align: center;
+}
+
+.beneficios-cont {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.beneficios-cont h3 {
+  color: green;
+}
+
+.container h3 {
+  font-size: 40px;
+}
+
+body .Vehículo-titulo {
+  font-size: 60px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 80%;
+  /* Ancho máximo del modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilos adicionales */
+.ver-vehiculo-btn {
+  cursor: pointer;
+}
+
+.modal-content .vehiculo {
+  padding-top: 100px;
+  ;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+}
+
+.modal-content .vehiculo div {
+  margin: 30px;
+}
+
+.modal-content ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly
+}
+
+.modal-content li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content li img {
+  text-align: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+.modal-content .precio {
+  text-align: center;
+  font-size: 70px;
+}
+
+html #titulo {
+  padding: 20px;
+  font-size: 31px;
+  text-align: center;
+  align-items: center;
+}
+
+.img-modal {
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#decripcion {
+  text-align: center;
+}
+
+html .modal-body {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h2#titulo {
+  padding: 20px;
+}
+
+p#decripcion {
+  padding: 20px;
+}
+
+#titulo {
+  padding: 20px;
+}
+
+#decripcion {
+  padding: 20px;
+}

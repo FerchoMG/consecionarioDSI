@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="images/icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {%block title%}{%endblock%} KEF Consecionario</title>
+
+  {%load static %}
+  <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Encabezado de la página -->
+  <header>
+    <nav>
+      <div class="logo">
+        <H1>KEF </H1>
+        <P>Consecionario</P>
+      </div>
+      <ul>
+        <li><a href="#inicio">INICIO</a></li>
+        <li><a href="#vehiculos">VEHICULOS</a></li>
+        <li><a href="#contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de inicio -->
+  <section id="inicio">
+    <div class="container">
+      <h1>Bienvenido a nuestro Concesionario de Automóviles</h1>
+      <p>Explora nuestra amplia gama de vehículos de alta calidad.</p>
+      <button id="btnVerVehiculo" data-vehicle-id="{{ project.id }}" class="ver-vehiculo-btn">Ver
+        Vehículos</button>
+    </div>
+  </section>
+  {% block content %}
+  <!-- Sección de vehículos -->
+  <section id="vehiculos">
+    <div class="container">
+      <h3>VEHICULOS DESTACADOS</h3>
+      <div class="slider-container">
+        <div class="slider">
+
+          {% for project in projects %}
+          <div class="slide">
+            <div class="img-cont"><img class="imagen-vehiculo" src="{{ project.image.url }}" alt="Vehículo 1"></div>
+            <div class="slide-info">
+              <h3 class="Vehículo-titulo">{{ project.tittle }}</h3>
+              <p>{{ project.price }}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+        <!-- Agrega más slides según necesites -->
+      </div>
+    </div>
+    </div>
+  </section>
+  {% endblock %}
+  <!-- Sección de beneficios -->
+  <section id="beneficios">
+    <div class="container-beneficios">
+      <h1>¡Disfruta de nuestros beneficios!</h1>
+      <div class="beneficios-cont">
+        <div class="benefit">
+          <img src="{% static 'core/images/secure.png' %}" alt="">
+          <h3>Seguro Gratis</h3>
+          <p>durante un año</p>
+        </div>
+        <div class="benefit">
+          <img src="{% static 'core/images/mecanic.png' %}" alt="">
+          <h3>Mantenimientos en Casa</h3>
+          <p>los primeros 3 meses</p>
+        </div>
+        <div class="benefit">
+          <img src="{% static 'core/images/phone.png' %}" alt="">
+          <h3>Servicio al cliente</h3>
+          <p>24 horas al dia</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Sección de contacto -->
+  <section id="contacto">
+
+    <div class="container">
+      <h2 class="titulocontacto">CONTACTANOS</h2>
+      <section class="contact-section">
+        <form class="contact-form" action="{% url 'home' %}" method="post">
+          {% csrf_token %}
+          <input type="text" name="name" placeholder="Nombre" required>
+          <input type="email" name="email" placeholder="Correo electrónico" required>
+          <textarea name="message" placeholder="Mensaje" required></textarea>
+          <button type="submit" class="submit-btn">ENVIAR</button>
+        </form>
+        <a href="https://wa.link/6a2yii" target="_blank" class="whatsapp-btn">CONTACTO POR
+          WHATSAPP</a>
+      </section>
+    </div>
+  </section>
+
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <!-- {% for project in projects %}-->
+      <!-- Contenido del vehículo seleccionado -->
+      <span id="close" class="close">&times;</span>
+      <div class="modal-body">
+        <!-- Aquí irá el contenido específico del vehículo -->
+        <h2 id="titulo">{{ project.tittle }}</h2>
+        <img class="img-modal" src="{{ project.image.url }}" alt="Vehículo">
+        <p id="decripcion">
+          {{ project.description}}
+        </p>
+        <ul>
+          <li><img src="{% static 'core/images/enigne.png' %}" alt="">
+            <h3 id="motor">{{ project.motor }}</h3>
+          </li>
+          <li><img src="{% static 'core/images/cilinder.png' %}" alt="">
+            <h3 id="cilindraje">{{ project.cilindraje }}</h3>
+          </li>
+          <li><img src="{% static 'core/images/hp.png' %}" alt="">
+            <h3 id="horsepower">{{ project.horsepower }}</h3>
+          </li>
+        </ul>
+        <p id="precio" class="precio">{{ project.precio }}</p>
+      </div>
+      <!--{% endfor %}-->
+    </div>
+  </div>
+  <!-- Pie de página -->
+  <footer>
+    <div class="container">
+      <p>Derechos de autor &copy; 2023 Keny Nieto, Ernesto Serrano, Fernando Molina</p>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="{% static 'core/js/index.js' %}"></script>
+  <script src="{% static 'core/js/template.js' %}"></script>
+</body>
+
+</html>
